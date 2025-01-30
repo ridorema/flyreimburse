@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-blue-800 text-white p-6">
+        <h2 class="text-2xl font-bold mb-6">Agency Dashboard</h2>
+        <nav>
+            <ul>
+                <li class="mb-4">
+                    <a href="{% url 'agency_dashboard' %}" class="block py-2 px-4 bg-blue-700 rounded-lg hover:bg-blue-600">Dashboard</a>
+                </li>
+                <li class="mb-4">
+                    <a href="{% url 'submit_claim' %}" class="block py-2 px-4 bg-blue-700 rounded-lg hover:bg-blue-600">Submit Claim</a>
+                </li>
+                <li class="mb-4">
+                    <a href="{% url 'logout' %}" class="block py-2 px-4 bg-red-600 rounded-lg hover:bg-red-500">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-10">
+        <h2 class="text-3xl font-bold text-blue-600 mb-6">Welcome, {{ request.user.username }}</h2>
+        <p class="text-gray-700">Manage your flight compensation claims below.</p>
+
+        <!-- Display Notifications -->
+        {% if messages %}
+            <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 my-4">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Claim Table -->
+        <div class="bg-white shadow-md rounded-lg mt-6 overflow-hidden">
+            <table class="w-full">
+                <thead class="bg-blue-600 text-white">
+                    <tr>
+                        <th class="py-3 px-4 text-left">Passenger</th>
+                        <th class="py-3 px-4 text-left">Flight</th>
+                        <th class="py-3 px-4 text-left">Date</th>
+                        <th class="py-3 px-4 text-left">Amount (€)</th>
+                        <th class="py-3 px-4 text-left">Status</th>
+                        <th class="py-3 px-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for application in applications %}
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-3 px-4">{{ application.passenger_name }}</td>
+                        <td class="py-3 px-4">{{ application.flight_number }}</td>
+                        <td class="py-3 px-4">{{ application.date }}</td>
+                        <td class="py-3 px-4">{{ application.compensation_amount }}</td>
+                        <td class="py-3 px-4">
+                            {% if application.status == "pending" %}
+                                <span class="bg-yellow-300 text-yellow-800 px-2 py-1 rounded-lg">Pending</span>
+                            {% elif application.status == "approved" %}
+                                <span class="bg-green-300 text-green-800 px-2 py-1 rounded-lg">Approved</span>
+                            {% else %}
+                                <span class="bg-red-300 text-red-800 px-2 py-1 rounded-lg">Rejected</span>
+                            {% endif %}
+                        </td>
+                        <td class="py-3 px-4">
+                            <a href="#" class="text-blue-600 hover:underline">View</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="py-4 text-center text-gray-600">You have no claims yet.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -1,14 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import ClaimSubmission
 from django.http import HttpResponse
-from .models import ContactMessage, Agency, Application
+from .models import ContactMessage, Agency, Application, ClaimSubmission
 import requests
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 
 
@@ -59,6 +58,9 @@ def home(request):
 def air_passenger_rights(request):
     return render(request, 'air-passenger-flights.html')
 
+def services(request):
+    return render(request, 'website/services.html')
+
 def delayed_compensation_right(request):
     return render(request, 'delayed-compensation-flights.html')
 
@@ -75,23 +77,35 @@ def form(request):
     return render(request, 'website/form.html')
 
 
+
+
+from .models import ClaimSubmission, Agency
+
 def submit_claim(request):
     if request.method == 'POST':
-        # Process the claim submission
         name = request.POST['name']
         email = request.POST['email']
         flight_number = request.POST['flight_number']
         date = request.POST['date']
         compensation_amount = request.POST['compensation_amount']
 
+        try:
+            agency = Agency.objects.get(user=request.user)  # Ensure agency exists
+        except Agency.DoesNotExist:
+            messages.error(request, "Error: Your account is not linked to an agency.")
+            return redirect('agency_dashboard')
+
         ClaimSubmission.objects.create(
+            agency=agency,  # ✅ Assign the claim to the logged-in agency
             name=name,
             email=email,
             flight_number=flight_number,
             date=date,
             compensation_amount=compensation_amount
         )
-        return redirect('home')
+
+        messages.success(request, "Claim submitted successfully!")
+        return redirect('agency_dashboard')
 
     return render(request, 'website/submit_claim.html')
 
@@ -129,12 +143,16 @@ def register_agency(request):
 
         if form.is_valid():
             user = form.save()
-            agency = Agency.objects.create(user=user, agency_name=agency_name, contact_email=contact_email)
+
+            
+            agency, created = Agency.objects.get_or_create(user=user, defaults={'agency_name': agency_name, 'contact_email': contact_email})
+
+            
+            agency_group, created = Group.objects.get_or_create(name="Agency")
+            user.groups.add(agency_group)
+
             login(request, user)
-            messages.success(request, "Registration successful! Redirecting to your dashboard.")
-            return redirect('dashboard')  # Redirect to agency dashboard
-        else:
-            messages.error(request, "Error: Please correct the form.")
+            return redirect('agency_dashboard')
 
     else:
         form = UserCreationForm()
@@ -153,9 +171,11 @@ def dashboard(request):
 @login_required
 def agency_dashboard(request):
     try:
-        agency = Agency.objects.get(user=request.user)  # Get the logged-in agency
-        applications = Application.objects.filter(agency=agency)  # Show only this agency's applications
+        # Get the agency linked to the logged-in user
+        agency = Agency.objects.get(user=request.user)
+        # Fetch claims submitted by this agency
+        applications = ClaimSubmission.objects.filter(agency=agency)
     except Agency.DoesNotExist:
-        return redirect('home')  # Redirect if the user is not an agency
+        applications = None  # No agency found, so no claims will be shown
 
     return render(request, 'website/agency_dashboard.html', {'applications': applications})

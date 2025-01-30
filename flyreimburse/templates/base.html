@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyReimburse</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <!-- Add Tailwind CSS or Bootstrap via CDN if desired -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
 </head>
@@ -15,45 +14,51 @@
     <header class="bg-blue-600 text-white shadow-lg">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <!-- Logo -->
-            <a href="/" class="text-2xl font-bold">
-                FlyReimburse
-            </a>
+            <a href="{% url 'home' %}" class="text-2xl font-bold">FlyReimburse</a>
 
             <!-- Navigation Links -->
             <nav>
                 <ul class="flex space-x-6 text-lg">
-                    <li><a href="/" class="hover:underline">Home</a></li>
+                    <li><a href="{% url 'home' %}" class="hover:underline">Home</a></li>
                     <li class="relative group">
                         <a href="#" class="hover:underline">Të Drejtat e Tua</a>
                         <ul class="absolute hidden bg-white shadow-lg rounded-lg text-black group-hover:flex space-x-6 px-4 py-2">
-                            <li><a href="/air-passenger-rights/" class="block px-4 py-2 hover:underline">Të Drejtat e Pasagjerëve Ajrorë</a></li>
-                            <li><a href="/delayed-compensation-right/" class="block px-4 py-2 hover:underline">Kompensimi për Fluturime të Vonuara</a></li>
-                            <li><a href="/overbooked-flight/" class="block px-4 py-2 hover:underline">Fluturimet e Rezervuara Tepër</a></li>
-                            <li><a href="/cancel-flight/" class="block px-4 py-2 hover:underline">Fluturimet e Anuluara</a></li>
+                            <li><a href="{% url 'air_passenger_rights' %}" class="block px-4 py-2 hover:underline">Të Drejtat e Pasagjerëve Ajrorë</a></li>
+                            <li><a href="{% url 'delayed_compensation_right' %}" class="block px-4 py-2 hover:underline">Kompensimi për Fluturime të Vonuara</a></li>
+                            <li><a href="{% url 'overbooked_flight' %}" class="block px-4 py-2 hover:underline">Fluturimet e Rezervuara Tepër</a></li>
+                            <li><a href="{% url 'cancel_flight' %}" class="block px-4 py-2 hover:underline">Fluturimet e Anuluara</a></li>
                         </ul>
                     </li>
-                    <li><a href="/website/templates/website/about/" class="hover:underline">About</a></li>
-                    <li><a href="/services/" class="hover:underline">Services</a></li>
-                    <li><a href="/contact/" class="hover:underline">Contact</a></li>
+                    <li><a href="{% url 'about' %}" class="hover:underline">About</a></li>
+                    <li><a href="{% url 'services' %}" class="hover:underline">Services</a></li>
+                    <li><a href="{% url 'contact' %}" class="hover:underline">Contact</a></li>
+
                     {% if request.user.is_authenticated %}
-                    <li><a href="{% url 'agency_dashboard' %}" class="text-gray-700 hover:text-blue-600">Dashboard</a></li>
-                    <li><a href="{% url 'logout' %}" class="text-gray-700 hover:text-blue-600">Logout</a></li>
+                        <li><a href="{% url 'agency_dashboard' %}" class="text-gray-700 hover:text-blue-600">Dashboard</a></li>
+                        <li>
+                            <form method="post" action="{% url 'logout' %}" class="inline">
+                                {% csrf_token %}
+                                <button type="submit" class="text-red-600 hover:text-red-500 bg-transparent border-none cursor-pointer">
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
                     {% else %}
-                    <li><a href="{% url 'register_agency' %}" class="text-gray-700 hover:text-blue-600">Register</a></li>
-                    <li><a href="{% url 'login' %}" class="text-gray-700 hover:text-blue-600">Login</a></li>
+                        <li><a href="{% url 'register_agency' %}" class="text-gray-700 hover:text-blue-600">Register</a></li>
+                        <li><a href="{% url 'login' %}" class="text-gray-700 hover:text-blue-600">Login</a></li>
                     {% endif %}
                 </ul>
             </nav>
             
+            <!-- Language Switcher -->
             <div class="language-switcher">
                 <a href="/i18n/setlang/?next={{ request.path }}&language=sq" class="mr-4">Shqip</a>
                 <a href="/i18n/setlang/?next={{ request.path }}&language=en">English</a>
             </div>
             
-
             <!-- Call to Action Button -->
             <div>
-                <a href="/claim/" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-200">
+                <a href="{% url 'submit_claim' %}" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-200">
                     Submit Claim
                 </a>
             </div>
@@ -66,10 +71,11 @@
         {% endblock %}
     </main>
 
-    <!-- Footer (optional) -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-4">
         <p>&copy; 2025 FlyReimburse. All rights reserved.</p>
     </footer>
+
     <script src="{% static 'js/form.js' %}"></script>
 </body>
 </html>

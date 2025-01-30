@@ -1,6 +1,14 @@
 from django.contrib import admin
 from .models import ContactMessage
 from .models import Agency, Application
+from .models import ClaimSubmission
+
+@admin.register(ClaimSubmission)
+class ClaimSubmissionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'flight_number', 'date', 'compensation_amount', 'status', 'agency')
+    list_filter = ('status', 'date')
+    search_fields = ('name', 'flight_number', 'agency__agency_name')
+
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
@@ -12,6 +20,8 @@ class ContactMessageAdmin(admin.ModelAdmin):
 class AgencyAdmin(admin.ModelAdmin):
     list_display = ('agency_name', 'contact_email', 'created_at')
     search_fields = ('agency_name', 'contact_email')
+    list_filter = ('created_at',)
+    
 
 @admin.register(Application)
 class ApplicationAdmin(admin.ModelAdmin):

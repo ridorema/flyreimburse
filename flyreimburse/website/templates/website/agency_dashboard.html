@@ -1,44 +1,63 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-blue-600 mb-6">Agency Dashboard</h2>
+<div class="flex h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-blue-800 text-white p-6">
+        <h2 class="text-2xl font-bold mb-6">Agency Dashboard</h2>
+        <nav>
+            <ul>
+                <li class="mb-4">
+                    <a href="{% url 'agency_dashboard' %}" class="block py-2 px-4 bg-blue-700 rounded-lg hover:bg-blue-600">Dashboard</a>
+                </li>
+                <li class="mb-4">
+                    <a href="{% url 'submit_claim' %}" class="block py-2 px-4 bg-blue-700 rounded-lg hover:bg-blue-600">Submit Claim</a>
+                </li>
+                <li class="mb-4">
+                    <a href="{% url 'logout' %}" class="block py-2 px-4 bg-red-600 rounded-lg hover:bg-red-500">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-    <p class="text-gray-700">Welcome, {{ request.user.username }}! Here you can manage your claims.</p>
+    <!-- Main Content -->
+    <main class="flex-1 p-10">
+        <h2 class="text-3xl font-bold text-blue-600 mb-6">Your Submitted Claims</h2>
 
-    <div class="mt-6">
-        <a href="{% url 'submit_claim' %}" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-            Submit a New Claim
-        </a>
-    </div>
-
-    <h3 class="text-2xl font-bold mt-8">Your Claims</h3>
-    
-    {% if applications %}
-        <table class="w-full bg-white shadow-lg rounded-lg overflow-hidden mt-4">
-            <thead class="bg-blue-600 text-white">
-                <tr>
-                    <th class="py-3 px-4">Passenger</th>
-                    <th class="py-3 px-4">Flight</th>
-                    <th class="py-3 px-4">Date</th>
-                    <th class="py-3 px-4">Amount (€)</th>
-                    <th class="py-3 px-4">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for application in applications %}
-                <tr class="border-b">
-                    <td class="py-3 px-4">{{ application.passenger_name }}</td>
-                    <td class="py-3 px-4">{{ application.flight_number }}</td>
-                    <td class="py-3 px-4">{{ application.date }}</td>
-                    <td class="py-3 px-4">{{ application.compensation_amount }}</td>
-                    <td class="py-3 px-4">{{ application.status }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p class="text-gray-700 mt-4">You have no claims yet.</p>
-    {% endif %}
+        {% if applications %}
+            <table class="w-full bg-white shadow-lg rounded-lg overflow-hidden mt-4">
+                <thead class="bg-blue-600 text-white">
+                    <tr>
+                        <th class="py-3 px-4">Passenger</th>
+                        <th class="py-3 px-4">Flight</th>
+                        <th class="py-3 px-4">Date</th>
+                        <th class="py-3 px-4">Amount (€)</th>
+                        <th class="py-3 px-4">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for claim in applications %}
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-3 px-4">{{ claim.name }}</td>
+                        <td class="py-3 px-4">{{ claim.flight_number }}</td>
+                        <td class="py-3 px-4">{{ claim.date }}</td>
+                        <td class="py-3 px-4">{{ claim.compensation_amount }}</td>
+                        <td class="py-3 px-4">
+                            {% if claim.status == "pending" %}
+                                <span class="bg-yellow-300 text-yellow-800 px-2 py-1 rounded-lg">Pending</span>
+                            {% elif claim.status == "approved" %}
+                                <span class="bg-green-300 text-green-800 px-2 py-1 rounded-lg">Approved</span>
+                            {% else %}
+                                <span class="bg-red-300 text-red-800 px-2 py-1 rounded-lg">Rejected</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="text-gray-700 mt-4">You have no submitted claims yet.</p>
+        {% endif %}
+    </main>
 </div>
 {% endblock %}

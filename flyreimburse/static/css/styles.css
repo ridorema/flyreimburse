@@ -7,12 +7,12 @@ body {
 
 header {
     background-color: #1E3A8A; /* Blue background */
-    color: white;
+    color: rgb(2, 2, 2);
 }
 
 header a {
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 header a:hover {
@@ -42,7 +42,7 @@ header a:hover {
 }
 
 .navbar .cta a {
-    background-color: white;
+    background-color: rgb(44, 107, 245);
     color: #1E3A8A;
     padding: 10px 20px;
     border-radius: 5px;
@@ -61,7 +61,7 @@ nav ul li ul {
     z-index: 10;
     left: -50px; /* Move the dropdown to the left */
     white-space: nowrap; /* Prevent text wrapping */
-    background: white; /* White background */
+    background: rgb(40, 60, 241); /* White background */
     border-radius: 8px; /* Rounded corners */
     padding: 10px 15px; /* Add padding around menu */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
@@ -81,7 +81,7 @@ nav ul li ul li a {
 
 /* Hover effects */
 nav ul li ul li a:hover {
-    color: white; /* White text on hover */
+    color: rgb(70, 40, 40); /* White text on hover */
     background-color: #1E40AF; /* Dark blue background */
     border-radius: 4px; /* Rounded corners on hover */
 }
