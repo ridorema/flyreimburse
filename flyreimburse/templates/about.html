@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <!-- Titulli i faqes -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">Rreth Nesh</h1>
+            <p class="text-lg text-gray-700">
+                Misioni ynë është të mbrojmë të drejtat tuaja si pasagjer dhe të sigurohemi që të merrni kompensimin që meritoni për fluturimet e vonuara, të anuluara ose të rezervuara tepër.
+            </p>
+        </div>
+
+        <!-- Seksioni Rreth Kompanisë -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Kush Jemi Ne?</h2>
+            <p class="text-gray-700 mb-4">
+                FlyReimburse është një kompani lider në mbrojtjen e të drejtave të pasagjerëve ajrorë. Me një ekip të përkushtuar ekspertësh ligjorë dhe teknologji moderne, ne ndihmojmë pasagjerët të kërkojnë kompensimin e tyre pa burokraci dhe stres.
+            </p>
+            <p class="text-gray-700">
+                Prej fillimit, ne kemi ndihmuar mijëra pasagjerë të marrin kompensimin që u takon, duke garantuar një proces të thjeshtë, të shpejtë dhe transparent.
+            </p>
+        </div>
+
+        <!-- Misioni dhe Vlerat -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Misioni dhe Vlerat Tona</h2>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li><strong>Transparenca:</strong> Ne sigurojmë që klientët tanë të jenë të informuar në çdo hap të procesit.</li>
+                <li><strong>Efikasiteti:</strong> Teknologjia jonë na lejon të përpunojmë rastet shpejt dhe me saktësi.</li>
+                <li><strong>Mbështetja:</strong> Ekipi ynë është gjithmonë i gatshëm për t'ju ndihmuar me çdo pyetje apo shqetësim.</li>
+            </ul>
+            <p class="mt-4 text-gray-700">
+                Ne besojmë se çdo pasagjer meriton të drejtat e tij dhe ne jemi këtu për të siguruar që ato të respektohen.
+            </p>
+        </div>
+
+        <!-- Përse të Zgjidhni Ne -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Përse të Zgjidhni FlyReimburse?</h2>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Proces i thjeshtë dhe pa burokraci.</li>
+                <li>Asnjë pagesë paraprake - ne paguhemi vetëm nëse fitoni.</li>
+                <li>Ekspertë ligjorë që garantojnë suksesin e rastit tuaj.</li>
+                <li>Përditësime të rregullta mbi statusin e kërkesës suaj.</li>
+            </ul>
+            <div class="text-center mt-6">
+                <a href="/check-compensation/" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 inline-block">
+                    Kontrolloni Kompensimin Tuaj
+                </a>
+            </div>
+        </div>
+
+        <!-- Thirrje për Veprim -->
+        <div class="bg-green-600 p-8 rounded-lg shadow-lg text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Na Besoni Me Kërkesën Tuaj!</h2>
+            <p class="text-lg mb-6">
+                Lini ekspertët tanë të trajtojnë procesin dhe të sigurohen që ju të merrni kompensimin tuaj sa më shpejt.
+            </p>
+            <a href="/check-compensation/" class="bg-white text-green-600 px-6 py-3 rounded-lg text-lg hover:bg-gray-200 inline-block">
+                Filloni Kërkesën Tuaj Tani
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

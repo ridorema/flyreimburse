@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <!-- Titulli i faqes -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">Fluturimet e Rezervuara Tepër</h1>
+            <p class="text-lg text-gray-700">
+                Informohuni mbi të drejtat tuaja në rast të rezervimeve të tepërta dhe si të kërkoni kompensimin tuaj.
+            </p>
+            <a href="/check-compensation/" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+                Kontrolloni Kompensimin e Fluturimit
+            </a>
+        </div>
+
+        <!-- Seksioni i Informacionit Kryesor -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Çfarë Duhet të Dini për Rezervimet e Tepërta</h2>
+            <p class="text-gray-700 mb-4">
+                Rezervimet e tepërta ndodhin kur një linjë ajrore shet më shumë bileta sesa ka vende në avion. Nëse nuk ju lejohet të hipni për shkak të rezervimeve të tepërta, ju keni të drejtë për:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li><strong>Kompensim financiar:</strong> Ju mund të merrni deri në 600€ për person, në varësi të distancës së fluturimit.</li>
+                <li><strong>Fluturim alternativ:</strong> Një fluturim tjetër drejt destinacionit tuaj përfundimtar.</li>
+                <li><strong>Shërbime kujdesi:</strong> Ushqime, pije dhe strehim në rast të vonesave të gjata.</li>
+            </ul>
+        </div>
+
+        <!-- Seksioni i Kompensimit -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Shuma e Kompensimit</h2>
+            <p class="text-gray-700 mb-4">
+                Shuma e kompensimit për rezervimet e tepërta bazohet në distancën e fluturimit:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-blue-600">Deri në 1500 km</h3>
+                    <p class="text-gray-700">250€ për person</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-blue-600">1500 - 3500 km</h3>
+                    <p class="text-gray-700">400€ për person</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-blue-600">Mbi 3500 km</h3>
+                    <p class="text-gray-700">600€ për person</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Procesi për Kërkimin e Kompensimit -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Si të Kërkoni Kompensimin për Rezervimet e Tepërta?</h2>
+            <ol class="list-decimal pl-6 text-gray-700 space-y-2">
+                <li><strong>Kontrolloni nëse kualifikoheni:</strong> Vendosni detajet e fluturimit tuaj dhe shikoni shumën e kompensimit.</li>
+                <li><strong>Paraqisni kërkesën:</strong> Lini ekspertët tanë të trajtojnë procesin në emrin tuaj.</li>
+                <li><strong>Merrni kompensimin tuaj:</strong> Relaksohuni ndërsa ne bëjmë punën. Nëse fitojmë, ju merrni 70% të shumës totale.</li>
+            </ol>
+        </div>
+
+        <!-- Thirrje për Veprim -->
+        <div class="text-center">
+            <a href="/check-compensation/" class="bg-green-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-700 inline-block">
+                Kontrolloni Kompensimin e Fluturimit
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

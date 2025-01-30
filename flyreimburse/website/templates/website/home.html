@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="bg-gray-100 text-center py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">Merrni Kompensimin Tuaj për Fluturimet e Anuluara ose të Vonuara!</h1>
+            <p class="text-lg text-gray-700 mb-6">Ne e bëjmë procesin të thjeshtë dhe të shpejtë për ju. Filloni tani!</p>
+            <a href="/claim/" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700">
+                Aplikoni Për Kompensim
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Pse të Zgjidhni FlyReimburse?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 shadow rounded-lg text-center">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Shërbim i Shpejtë</h3>
+                    <p class="text-gray-700">Ne i trajtojmë rastet tuaja me prioritet të lartë.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded-lg text-center">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Pa Kosto Fillestare</h3>
+                    <p class="text-gray-700">Paguheni vetëm nëse fitoni kompensimin tuaj.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded-lg text-center">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Ekip i Ekspertëve</h3>
+                    <p class="text-gray-700">Ekspertë të përkushtuar për të ndihmuar pasagjerët ajrorë.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Left Side: Claim by Yourself -->
+        <div class="space-y-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Pse Njerëzit Zgjedhin FlyReimburse?</h2>
+            <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                <span class="w-8 h-8 bg-red-300 flex items-center justify-center rounded-full text-white font-bold">X</span>
+                <span class="ml-4">Kompleksitet</span>
+            </h3>
+            <p class="text-gray-700 mb-4">Kuptimi i rregullave të komplikuara të kompensimit të fluturimeve mund të jetë i lodhshëm dhe konfuz.</p>
+
+            <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                <span class="w-8 h-8 bg-red-300 flex items-center justify-center rounded-full text-white font-bold">X</span>
+                <span class="ml-4">Shumë Dokumenta</span>
+            </h3>
+            <p class="text-gray-700 mb-4">Plotësimi i formularëve dhe mbledhja e provave për të mbështetur kërkesën tuaj mund të jetë lodhës dhe që merr shumë kohë.</p>
+
+            <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                <span class="w-8 h-8 bg-red-300 flex items-center justify-center rounded-full text-white font-bold">X</span>
+                <span class="ml-4">Rreziqe</span>
+            </h3>
+            <p class="text-gray-700 mb-4">Ju duhet të mbuloni vetë shpenzimet ligjore nëse kërkesa juaj shkon në gjykatë.</p>
+
+            <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                <span class="w-8 h-8 bg-red-300 flex items-center justify-center rounded-full text-white font-bold">X</span>
+                <span class="ml-4">Kufizimet e Linjave Ajrore</span>
+            </h3>
+            <p class="text-gray-700 mb-4">Disa linja ajrore përfitojnë nga hapësirat ligjore ose përdorin gjuhë të paqartë për të shmangur kompensimin e pasagjerëve.</p>
+
+            <h3 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
+                <span class="w-8 h-8 bg-red-300 flex items-center justify-center rounded-full text-white font-bold">X</span>
+                <span class="ml-4">Mungesa e Transparencës</span>
+            </h3>
+            <p class="text-gray-700">Linjat ajrore shpesh nuk ofrojnë transparencë për procesin e kompensimit, duke lënë pasagjerët të paqartë për statusin e kërkesave të tyre.</p>
+        </div>
+
+        <!-- Right Side: Claim with FlyReimburse -->
+        <div class="space-y-6 bg-green-600 text-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4">Kërkoni me FlyReimburse</h3>
+
+            <h3 class="text-lg font-bold mb-2 flex items-center">
+                <span class="w-8 h-8 bg-white flex items-center justify-center rounded-full text-green-600 font-bold">✓</span>
+                <span class="ml-4">Shpejt dhe Lehtë</span>
+            </h3>
+            <p class="text-white mb-4">Asnjë formular i gjatë apo dokumenta të lodhshme - plotësoni kërkesën tuaj për kompensim në pak minuta!</p>
+
+            <h3 class="text-lg font-bold mb-2 flex items-center">
+                <span class="w-8 h-8 bg-white flex items-center justify-center rounded-full text-green-600 font-bold">✓</span>
+                <span class="ml-4">Pa Rrezik Financiar</span>
+            </h3>
+            <p class="text-white mb-4">FlyReimburse mbulon të gjitha shpenzimet e rikuperimit të kompensimit. Ju nuk paguani asgjë nëse nuk fitojmë rastin tuaj.</p>
+
+            <h3 class="text-lg font-bold mb-2 flex items-center">
+                <span class="w-8 h-8 bg-white flex items-center justify-center rounded-full text-green-600 font-bold">✓</span>
+                <span class="ml-4">Pretendime për Fluturime të Vjetra</span>
+            </h3>
+            <p class="text-white mb-4">Në varësi të rregulloreve, ju mund të kërkoni kompensim për fluturime të ndërprera deri në 3 vite më parë.</p>
+
+            <h3 class="text-lg font-bold mb-2 flex items-center">
+                <span class="w-8 h-8 bg-white flex items-center justify-center rounded-full text-green-600 font-bold">✓</span>
+                <span class="ml-4">Përditësime të Rregullta</span>
+            </h3>
+            <p class="text-white mb-4">Ne do t’ju informojmë për progresin e kërkesës tuaj dhe do të përgjigjemi ndaj çdo pyetjeje që mund të keni gjatë procesit.</p>
+
+            <h3 class="text-lg font-bold mb-2 flex items-center">
+                <span class="w-8 h-8 bg-white flex items-center justify-center rounded-full text-green-600 font-bold">✓</span>
+                <span class="ml-4">Ekspertë të Besueshëm</span>
+            </h3>
+            <p class="text-white">Ekspertët tanë ligjorë do të sigurojnë që çdo pasagjer të marrë kompensimin që meriton.</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- How It Works Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Si Funksionon</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 shadow rounded-lg text-center">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Hapi 1</h3>
+                    <p class="text-gray-700">Na ofroni informacionin për fluturimin tuaj.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded-lg text-center">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Hapi 2</h3>
+                    <p class="text-gray-700">Ne shqyrtojmë rastin tuaj dhe përcaktojmë nëse jeni të përshtatshëm për kompensim.</p>
+                </div>
+                <div class="bg-white p-6 shadow rounded-lg text-center">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">Hapi 3</h3>
+                    <p class="text-gray-700">Ju merrni kompensimin tuaj shpejt dhe lehtë.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Comprehensive Solution Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Zgjidhje Gjithëpërfshirëse</h2>
+                <p class="text-center text-lg text-gray-700 mb-10">
+                    Ne trajtojmë më shumë probleme të fluturimeve dhe sigurojmë që të drejtat tuaja si pasagjer ajror të respektohen.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Delayed Flight Compensation -->
+                    <div class="bg-gray-100 p-6 shadow rounded-lg text-center">
+                        <img src="{% static 'images/delayed-icon.png' %}" alt="Delayed Flight Icon" class="mx-auto mb-4" />
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">Kompensim për Fluturime të Vonuara</h3>
+                        <p class="text-gray-700">Koha është para – nëse fluturimi juaj ka mbërritur në destinacionin përfundimtar më shumë se 3 orë me vonesë për shkak të gabimit të linjës ajrore, ju keni të drejtë për kompensim.</p>
+                    </div>
+                    <!-- Cancelled Flight Compensation -->
+                    <div class="bg-gray-100 p-6 shadow rounded-lg text-center">
+                        <img src="{% static 'images/cancelled-icon.png' %}" alt="Cancelled Flight Icon" class="mx-auto mb-4" />
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">Kompensim për Fluturime të Anuluara</h3>
+                        <p class="text-gray-700">Njoftimi është i domosdoshëm – nëse nuk ju është njoftuar për anulimin e fluturimit të paktën 14 ditë më parë, ju keni të drejtë për kompensim. Përveç kësaj, mund të përfitoni edhe rimbursim të biletës.</p>
+                    </div>
+                    <!-- Overbooked Flight Compensation -->
+                    <div class="bg-gray-100 p-6 shadow rounded-lg text-center">
+                        <img src="{% static 'images/overbooked-icon.png' %}" alt="Overbooked Flight Icon" class="mx-auto mb-4" />
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">Kompensim për Fluturime të Rezervuara Tepër</h3>
+                        <p class="text-gray-700">Vendi duhet të jetë i garantuar – nëse nuk ju lejohet të hipni për shkak të rezervimeve të tepërta, ju keni të drejtë për kompensim. Shuma e kompensimit varet nga distanca e fluturimit dhe vonesa.</p>
+                    </div>
+                    <!-- Air Passenger Rights -->
+                    <div class="bg-gray-100 p-6 shadow rounded-lg text-center">
+                        <img src="{% static 'images/rights-icon.png' %}" alt="Air Passenger Rights Icon" class="mx-auto mb-4" />
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">Të Drejtat e Pasagjerëve Ajrorë</h3>
+                        <p class="text-gray-700">Njihni të drejtat tuaja – mos lejoni që linjat ajrore t’ju mashtrojnë. Lexoni Rregulloren Europiane (KE) Nr. 261/2004 për të kuptuar se çfarë ju takon, duke përfshirë kompensimin dhe shërbimet falas në aeroport.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Premium Assistance Section -->
+<section class="bg-green-600 text-white py-16">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        <!-- Left Side: Text -->
+        <div class="border-l-4 border-white pl-6">
+            <h2 class="text-3xl font-bold mb-4">Ne Kujdesemi për Ju me Fluturimet e Ardhshme!</h2>
+            <p class="text-lg mb-6">
+                Mos u shqetësoni më për vonesat e fluturimeve, bagazhet e humbura ose shpenzimet e papritura të udhëtimit. 
+                Bashkohuni me FlyReimburse Care dhe përfitoni asistencë premium, prioritet në pretendimet për kompensim, qasje 
+                në sallonet e aeroportit dhe më shumë.
+            </p>
+            <a href="/sherbime/" class="bg-white text-green-600 px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200">
+                Mëso Më Shumë
+            </a>
+        </div>
+        <!-- Right Side: Image -->
+        <div>
+            <img src="{% static 'images/premium-assistance.png' %}" alt="Premium Assistance" class="rounded-lg shadow-lg">
+        </div>
+    </div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Left Side: Testimonials -->
+        <div class="relative">
+            <div id="testimonial-box" class="bg-white p-6 shadow-lg rounded-lg text-center transition-all duration-500 ease-in-out">
+                <p class="text-gray-700 text-lg italic mb-4" id="testimonial-text">
+                    "Shërbimi i FlyReimburse është i shkëlqyer. Ekipi më ndihmoi të merrja kompensimin tim shpejt dhe pa probleme!"
+                </p>
+                <h3 class="text-blue-600 font-bold" id="testimonial-author">- Klienti i Kënaqur</h3>
+            </div>
+        </div>
+        <!-- Right Side: Stats -->
+        <div class="text-center md:text-right">
+            <h2 class="text-3xl font-bold text-blue-600 mb-4">Ne Kemi Ndihmuar</h2>
+            <p class="text-4xl font-bold text-gray-800">1 Milion Pasagjerë</p>
+            <p class="text-lg text-gray-700">me Problemet e Fluturimeve të Tyre</p>
+        </div>
+    </div>
+</section>
+
+<!-- info per fluturimet nga dhe per ne Shqiperi -->
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-blue-600 mb-6">Fluturime Drejt & Nga Shqipëria</h2>
+
+        {% if flights %}
+        <table class="w-full bg-white shadow-lg rounded-lg overflow-hidden">
+            <thead class="bg-blue-600 text-white">
+                <tr>
+                    <th class="py-3 px-4">Fluturimi</th>
+                    <th class="py-3 px-4">Linja Ajrore</th>
+                    <th class="py-3 px-4">Nga</th>
+                    <th class="py-3 px-4">Deri</th>
+                    <th class="py-3 px-4">Statusi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flights %}
+                <tr class="border-b">
+                    <td class="py-3 px-4">{{ flight.flight_number }}</td>
+                    <td class="py-3 px-4">{{ flight.airline }}</td>
+                    <td class="py-3 px-4">{{ flight.departure_airport }} ({{ flight.departure_iata }})</td>
+                    <td class="py-3 px-4">{{ flight.arrival_airport }} ({{ flight.arrival_iata }})</td>
+                    <td class="py-3 px-4">{{ flight.status }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="py-4 text-center text-gray-600">Nuk ka të dhëna për fluturime në Shqipëri aktualisht.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-gray-700 text-center">Nuk ka të dhëna për fluturime live në këtë moment.</p>
+        {% endif %}
+    </div>
+</section>
+
+
+<script src="{% static 'js/testimonials.js' %}"></script>
+
+{% endblock %}

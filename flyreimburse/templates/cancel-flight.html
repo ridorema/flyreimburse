@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <!-- Page Title -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">Fluturimet e Anuluara</h1>
+            <p class="text-lg text-gray-700">
+                Mësoni për të drejtat tuaja dhe si të kërkoni kompensim për fluturimet e anuluara.
+            </p>
+            <a href="/check-compensation/" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+                Kontrolloni Kompensimin e Fluturimit
+            </a>
+        </div>
+
+        <!-- Key Information Section -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Kur Jeni të Kualifikuar për Kompensim?</h2>
+            <p class="text-gray-700 mb-4">
+                Ju keni të drejtë të merrni kompensim financiar nëse fluturimi juaj është anuluar dhe:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Ju nuk jeni njoftuar të paktën 14 ditë përpara.</li>
+                <li>Nuk është ofruar një alternativë për fluturim tjetër ose rimbursim.</li>
+                <li>Problemi nuk ka qenë për shkak të situatave të jashtëzakonshme (moti i keq, sulme terroriste, etj.).</li>
+            </ul>
+        </div>
+
+        <!-- Your Rights Section -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Të Drejtat Tuaja</h2>
+            <p class="text-gray-700 mb-4">
+                Nëse fluturimi juaj është anuluar, ju keni të drejtë për:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li><strong>Rimbursim:</strong> Një rimbursim i plotë i biletës tuaj.</li>
+                <li><strong>Ri-Rutë:</strong> Një fluturim tjetër drejt destinacionit tuaj përfundimtar.</li>
+                <li><strong>Kujdes:</strong> Ushqime, pije dhe akomodim nëse jeni bllokuar gjatë natës.</li>
+                <li><strong>Kompensim Financiar:</strong> Deri në 600€ për person, në varësi të distancës së fluturimit.</li>
+            </ul>
+        </div>
+
+        <!-- Compensation Amount Section -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Shuma e Kompensimit</h2>
+            <p class="text-gray-700 mb-4">
+                Shuma e kompensimit që mund të merrni varet nga distanca e fluturimit tuaj:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-blue-600">Deri në 1500 km</h3>
+                    <p class="text-gray-700">250€ për person</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-blue-600">1500 - 3500 km</h3>
+                    <p class="text-gray-700">400€ për person</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-blue-600">Mbi 3500 km</h3>
+                    <p class="text-gray-700">600€ për person</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+            <a href="/check-compensation/" class="bg-green-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-700 inline-block">
+                Kontrolloni Kompensimin e Fluturimit
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

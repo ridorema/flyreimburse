@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Regjistrimi i Agjencisë</h2>
+    {% if messages %}
+    <div class="mb-4">
+        {% for message in messages %}
+            <p class="text-red-500">{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form method="post" class="bg-white p-8 rounded-lg shadow-lg w-full md:w-1/2 mx-auto">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="agency_name" class="block text-gray-700 font-bold mb-2">Emri i Agjencisë</label>
+        <input type="text" name="agency_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+
+        <label for="contact_email" class="block text-gray-700 font-bold mb-2 mt-4">Email i Kontaktit</label>
+        <input type="email" name="contact_email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 mt-6 w-full">
+            Regjistrohu
+        </button>
+    </form>
+</div>
+{% endblock %}

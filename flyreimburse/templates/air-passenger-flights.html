@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <!-- Page Title -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">Të Drejtat e Pasagjerëve Ajrorë</h1>
+            <p class="text-lg text-gray-700">
+                Mësoni më shumë rreth të drejtave tuaja si pasagjer ajror dhe si të përfitoni kompensimin që meritoni.
+            </p>
+            <a href="/check-compensation/" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+                Kontrolloni Kompensimin e Fluturimit
+            </a>
+        </div>
+
+        <!-- Rights Overview Section -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Të Drejtat Tuaja</h2>
+            <p class="text-gray-700">
+                Si pasagjer ajror, ju keni 3 të drejta kryesore:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 mt-4 space-y-2">
+                <li><strong>E drejta për kujdes:</strong> Ushqim, pije dhe strehim në raste të vonesave të gjata.</li>
+                <li><strong>E drejta për rimbursim ose ri-rutë:</strong> Zgjidhni mes rimbursimit ose rezervimit pa kosto shtesë.</li>
+                <li><strong>E drejta për kompensim:</strong> Kompensim financiar për vonesa mbi 3 orë, anulime ose ndalim të hipjes për shkak të rezervimeve të tepërta.</li>
+            </ul>
+            <p class="mt-4 text-gray-700">
+                Këto të drejta janë kumulative dhe nuk përjashtojnë njëra-tjetrën. Linjat ajrore ndëshkohen rëndë nëse nuk i respektojnë këto detyrime.
+            </p>
+        </div>
+
+        <!-- Right to Care Section -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">E Drejta për Kujdes</h2>
+            <p class="text-gray-700 mb-4">
+                Nëse fluturimi juaj vonohet për më shumë se 2 orë ose anulohet, linja ajrore duhet të sigurojë:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Ushqime dhe pije sipas kohës së ditës.</li>
+                <li>Strehim për natën dhe transport për në hotel.</li>
+                <li>Rimbursim për shpenzimet e arsyeshme si ilaçe, të brendshme, apo karikues telefoni.</li>
+            </ul>
+            <p class="mt-4 text-gray-700">
+                Nëse këto nuk ofrohen, mund të mbani faturat dhe të kërkoni rimbursim përmes shërbimeve tona.
+            </p>
+        </div>
+
+        <!-- Right to Rerouting or Refund Section -->
+        <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">E Drejta për Ri-Rutë ose Rimbursim</h2>
+            <p class="text-gray-700 mb-4">
+                Në rast të anulimeve ose vonesave të gjata (mbi 5 orë), ju keni të drejtën të zgjidhni:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Rimbursim të plotë të biletës ose ri-rutë drejt destinacionit përfundimtar.</li>
+                <li>Ri-rutë në një datë tjetër që ju përshtatet, pa kosto shtesë.</li>
+                <li>Kthim në aeroportin fillestar nëse udhëtimi nuk ka më qëllim.</li>
+            </ul>
+            <p class="mt-4 text-gray-700">
+                Nuk lejohen pagesa shtesë. Në rast uljes së klasës së udhëtimit, duhet të merrni një rimbursim parcial.
+            </p>
+        </div>
+
+        <!-- Right to Compensation Section -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">E Drejta për Kompensim</h2>
+            <p class="text-gray-700 mb-4">
+                Ju keni të drejtën për kompensim financiar nëse:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Fluturimi juaj vonohet për më shumë se 3 orë.</li>
+                <li>Fluturimi anulohet dhe nuk ju është njoftuar 14 ditë më parë.</li>
+                <li>Nuk ju lejohet të hipni për shkak të rezervimeve të tepërta.</li>
+            </ul>
+            <p class="mt-4 text-gray-700">
+                Shuma e kompensimit varet nga distanca e fluturimit:
+            </p>
+            <ul class="list-disc pl-6 text-gray-700 mt-4">
+                <li><strong>Deri në 1500 km:</strong> 250€ për person.</li>
+                <li><strong>1500 - 3500 km:</strong> 400€ për person.</li>
+                <li><strong>Mbi 3500 km:</strong> 600€ për person.</li>
+            </ul>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+            <a href="/check-compensation/" class="bg-green-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-700 inline-block">
+                Kontrolloni Kompensimin e Fluturimit
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,96 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1E3A8A; /* Blue background */
+    color: white;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li {
+    margin: 0;
+}
+
+.navbar ul li a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar .cta a {
+    background-color: white;
+    color: #1E3A8A;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.navbar .cta a:hover {
+    background-color: #BFDBFE;
+}
+
+/* Dropdown Menu Styling */
+nav ul li ul {
+    display: none; /* Hide dropdown initially */
+    position: absolute;
+    z-index: 10;
+    left: -50px; /* Move the dropdown to the left */
+    white-space: nowrap; /* Prevent text wrapping */
+    background: white; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 15px; /* Add padding around menu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+/* Show dropdown horizontally */
+nav ul li ul li {
+    display: inline-block; /* Display menu items on one line */
+}
+
+nav ul li ul li a {
+    color: black; /* Black text color */
+    text-decoration: none; /* Remove underline */
+    padding: 8px 12px; /* Add spacing around links */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effects */
+nav ul li ul li a:hover {
+    color: white; /* White text on hover */
+    background-color: #1E40AF; /* Dark blue background */
+    border-radius: 4px; /* Rounded corners on hover */
+}
+
+/* Show dropdown on hover */
+nav ul li:hover ul,
+nav ul li.group:hover ul {
+    display: flex; /* Show dropdown */
+    flex-direction: row; /* Arrange items horizontally */
+    gap: 10px; /* Add spacing between items */
+}
+
